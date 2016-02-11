@@ -1,0 +1,62 @@
+@url-site:'';
+@url-path:'./..';
+@url-path-css:'@{url-path}/css';
+@url-path-fonts:'@{url-path}/fonts';
+@url-path-img:'@{url-path}/img';
+@url-path-js:'@{url-path}/js';
+
+#site {
+	
+	.bi(@img:'') {
+		background-image:url('@{url-path-img}/@{img}');
+	}
+	
+	.bg(@color:#ffffff) {
+		#fe.bg(@color);
+	}
+	.bpos(@pos:center center) {
+		#fe.bpos(@pos);
+	}
+	.brep(@rep:no-repeat) {
+		#fe.bpos(@rep);
+	}
+	.bsize(@s:initial) {
+		#fe.bsize(@s);
+	}
+	
+	
+	.color(@color:#ffffff) {
+		#fe.color(@color);
+	}
+	.underline(@val:underline) {
+		#fe.underline(@val);
+	}
+	.uppercase(@val:uppercase) {
+		#fe.uppercase(@val);
+	}
+	.size(@val:10px) {
+		#fe.size(@val);
+	}
+	.bold(@val:bold) {
+		#fe.bold(@val);
+	}
+	.italic(@val:italic) {
+		#fe.italic(@val);
+	}
+	.z(@val:1) {
+		#fe.z(@val);
+	}
+	.lh(@val:1em) {
+		#fe.lh(@val);
+	}
+	.ff(@val:Arial) {
+		#fe.ff(@val);
+	}
+	.w(@val:0px) {
+		#fe.w(@val);
+	}
+	.h(@val:0px) {
+		#fe.h(@val);
+	}
+	
+}
