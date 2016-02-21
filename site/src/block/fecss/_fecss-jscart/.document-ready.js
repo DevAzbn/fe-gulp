@@ -77,7 +77,7 @@ $('.fecss-jscart').each(function(){
 			amount = btn.closest('.jscart-item').attr('data-jscart-amount');
 		}
 		
-		Cart.add(product, taste, cost, amount);
+		Cart.add(product, taste, cost, parseInt(amount));
 		console.log('product ' + product + ' added to cart');
 		block.trigger('rebuild');
 	});
@@ -105,7 +105,7 @@ $('.fecss-jscart').each(function(){
 			amount = btn.closest('.jscart-item').attr('data-jscart-amount');
 		}
 		
-		Cart.remove(product, taste, amount);
+		Cart.remove(product, taste, parseInt(amount));
 		console.log('product ' + product + ' removed from cart');
 		block.trigger('rebuild');
 	});
