@@ -206,4 +206,10 @@ var jsCart = function() {
 		ctrl.ls.obj2s(param.ls.profile, obj);
 	};
 	
+	
+	/* ----- получение данных пользователя, используется для заказа ----- */
+	ctrl.getProfile = function(obj) {
+		return ctrl.ls.s2obj(param.ls.profile);
+	};
+	
 };
