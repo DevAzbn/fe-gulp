@@ -1,3 +1,5 @@
+[snp tpl="src/_/concat.plugin.js" ]
+
 $(document).ready(function() {
 	
 	[snp tpl="src/_/concat.document-ready.js" ]

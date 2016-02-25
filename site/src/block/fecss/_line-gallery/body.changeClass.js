@@ -1,6 +1,5 @@
 
 	$('.line-gallery').each(function(index){
-		event.preventDefault();
 		
 		var block = $(this);
 		var body = $('body').eq(0);
@@ -19,9 +18,14 @@
 			c = block.attr('data-lg-vis') || 3;
 		}
 		
-		var imgs = block.find('.img-block .item').hide();
+		var imgs = block.find('.img-block .item');//.hide();
+		for(var i = (c); i < imgs.size(); i++) {
+			imgs.eq(i).hide();
+		}
 		for(var i = 0; i < c; i++) {
-			imgs.eq(i).fadeIn('fast');
+			if(imgs.eq(i).is(':hidden')) {
+				imgs.eq(i).fadeIn('fast');
+			}
 		}
 		
 	});

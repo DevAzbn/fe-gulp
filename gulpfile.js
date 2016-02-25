@@ -48,6 +48,7 @@ gulp.task('default',
 gulp.task('dev',
 [
 	'dev:html',
+	'dev:plugin:js',
 	'dev:document-ready:js',
 	'dev:window-resize:js',
 	'dev:window-scroll:js',
@@ -69,12 +70,14 @@ gulp.task('server', function(){
 	gulp.watch(path.block.root + '/**/*.html', ['dev:html']);
 	gulp.watch(path.src.html + '/**/*.html', ['dev:html']);
 	
-	
+	gulp.watch(path.block.root + '/**/.plugin.js', ['dev:plugin:js']);
 	gulp.watch(path.block.root + '/**/.document-ready.js', ['dev:document-ready:js']);
 	gulp.watch(path.block.root + '/**/.window-resize.js', ['dev:window-resize:js']);
 	gulp.watch(path.block.root + '/**/.window-scroll.js', ['dev:window-scroll:js']);
 	gulp.watch(path.block.root + '/**/body.changeClass.js', ['dev:body.changeClass:js']);
 	gulp.watch(path.block.root + '/**/.changeClass.js', ['dev:changeClass:js']);
+	
+	gulp.watch(path.src._ + '/concat.plugin.js', ['dev:js']);
 	gulp.watch(path.src._ + '/concat.document-ready.js', ['dev:js']);
 	gulp.watch(path.src._ + '/concat.window-resize.js', ['dev:js']);
 	gulp.watch(path.src._ + '/concat.window-scroll.js', ['dev:js']);
@@ -113,6 +116,16 @@ gulp.task('dev:js', function(){
 		//.pipe(uglify())
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream : true,}))
+	;
+});
+
+gulp.task('dev:plugin:js', function(){
+	return gulp.src(path.block.root + '/**/.plugin.js')
+		.pipe(plumber())
+		.pipe(pagebuilder(path.build.root))
+		.pipe(uglify())
+		.pipe(concat('concat.plugin.js'))
+		.pipe(gulp.dest(path.src._))
 	;
 });
 

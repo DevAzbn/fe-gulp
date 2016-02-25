@@ -1,6 +1,5 @@
 
 	$('.line-gallery').each(function(index){
-		event.preventDefault();
 		
 		var block = $(this);
 		

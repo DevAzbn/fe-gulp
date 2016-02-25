@@ -1,6 +1,5 @@
 
 	$('.arrow-slider').each(function(index){
-		event.preventDefault();
 		
 		var block = $(this);
 		var imgs = block.find('.img-block .item');
