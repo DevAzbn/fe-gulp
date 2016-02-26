@@ -25,7 +25,7 @@ start .fecss window-resize
 			};
 			var cl = 'window-width';
 			var w = $(window).outerWidth(true);
-			var body = $('body.fecss').eq(0);
+			var body = $('html body').eq(0);
 			if(w < size.xs.max) {
 				if(body.hasClass('window-width-sm')) {
 					body.removeClass('window-width-sm');
@@ -74,7 +74,7 @@ start .fecss window-resize
 				}
 				cl = 'window-width-lg';
 			}
-			$('body.fecss').eq(0).addClass(cl);
+			$('html body').eq(0).addClass(cl);
 		}
 	);
 

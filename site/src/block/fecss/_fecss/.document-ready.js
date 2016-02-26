@@ -16,7 +16,7 @@ start .fecss document-ready
 			if (userAgent.indexOf('opera') != -1) res = 'opera';
 			if (userAgent.indexOf('yabrowser') != -1) res = 'yabrowser';
 			
-			$('body.fecss').eq(0).addClass(res);
+			$('html').eq(0).addClass(res);
 		}
 	);
 
