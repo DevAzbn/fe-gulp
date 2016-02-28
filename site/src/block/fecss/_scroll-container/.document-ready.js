@@ -15,7 +15,10 @@
 			
 			if(block.hasClass('horizontal')) {
 				type = 0;
-				block.attr('data-ratio-h', (target.outerWidth(true) / (line.outerWidth(true) - scroll.outerWidth(true))) * (otarget.outerWidth(true) / target.outerWidth(true)));
+				
+				scroll.width(line.width() * (target.outerWidth(true) / otarget.outerWidth(true)));
+				
+				block.attr('data-ratio-h', (otarget.outerWidth(true) / (line.outerWidth(true))));
 				
 				scroll.draggable({
 					axis:'x',
@@ -28,7 +31,10 @@
 				
 			} else if(block.hasClass('vertical')) {
 				type = 1;
-				block.attr('data-ratio-v', (target.outerHeight(true) / (line.outerHeight(true) - scroll.outerHeight(true))) * (otarget.outerHeight(true) / target.outerHeight(true)));
+				
+				scroll.height(line.height() * (target.outerHeight(true) / otarget.outerHeight(true)));
+				
+				block.attr('data-ratio-v', (otarget.outerHeight(true) / (line.outerHeight(true))));
 				
 				scroll.draggable({
 					axis:'y',
