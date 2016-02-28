@@ -1,0 +1,82 @@
+.scroll-element {
+	overflow:hidden;
+	
+	.scroll-overflow {
+		overflow:scroll;
+	}
+}
+
+.scroll-container {
+	position:absolute;
+	
+	&.horizontal {
+		#fe.w(100%);
+		#fe.h(5px);
+		left:0;
+		bottom:10px;
+		
+		&.top {
+			top:10px;
+		}
+		&.bottom {
+			bottom:10px;
+		}
+		
+		.scroll-line {
+			#fe.w(96%);
+			#fe.h(1px);
+			left:2%;
+			top:50%;
+			
+			.scroll {
+				#fe.w(10%);
+				#fe.h(500%);
+				top:-200%;
+			}
+		}
+		
+	}
+	&.vertical {
+		#fe.w(5px);
+		#fe.h(100%);
+		left:10px;
+		top:0;
+		
+		&.left {
+			left:10px;
+			right:initial;
+		}
+		&.right {
+			left:initial;
+			right:10px;
+		}
+		
+		.scroll-line {
+			#fe.w(1px);
+			#fe.h(96%);
+			top:2%;
+			left:50%;
+			
+			.scroll {
+				#fe.w(500%);
+				#fe.h(10%);
+				left:-200%;
+			}
+		}
+		
+	}
+	
+	.scroll-line {
+		position:absolute;
+		#fe.bg(#999999);
+		
+		.scroll {
+			position:absolute;
+			left:0;
+			top:0;
+			#fe.bg(#999999);
+			border-radius:4px;
+		}
+	}
+	
+}
