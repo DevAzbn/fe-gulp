@@ -1,8 +1,12 @@
-.scroll-element {
+.scroll-hide {
 	overflow:hidden;
 	
-	.scroll-overflow {
+	.scroll-element {
 		overflow:scroll;
+		
+		.scroll-overflow {
+			overflow:scroll;
+		}
 	}
 }
 
@@ -32,6 +36,15 @@
 				#fe.w(10%);
 				#fe.h(500%);
 				top:-200%;
+				
+				&.ball {
+					& > .scroll-ball {
+						#fe.w(1em);
+						#fe.h(1em);
+						left:50%;
+						top:-0.2em;
+					}
+				}
 			}
 		}
 		
@@ -61,6 +74,15 @@
 				#fe.w(500%);
 				#fe.h(10%);
 				left:-200%;
+				
+				&.ball {
+					& > .scroll-ball {
+						#fe.w(1em);
+						#fe.h(1em);
+						left: -0.2em;
+						top:50%;
+					}
+				}
 			}
 		}
 		
@@ -76,6 +98,22 @@
 			top:0;
 			#fe.bg(#999999);
 			border-radius:4px;
+			
+			& > .scroll-ball {
+				display:none;
+			}
+			
+			&.ball {
+				#fe.bg(transparent);
+				
+				& > .scroll-ball {
+					display:block;
+					content:'';
+					position:absolute;
+					#fe.bg(#999999);
+					border-radius:50%;
+				}
+			}
 		}
 	}
 	
