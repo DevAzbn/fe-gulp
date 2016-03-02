@@ -13,7 +13,7 @@ $('.fecss-jsviewed').each(function(){
 		block.empty();
 		
 		var vwd = Viewed.getAll();
-		console.log(vwd.length);
+		//console.log(vwd.length);
 		if(vwd != null) {
 			for(var k in vwd) {
 				var item = vwd[k];
