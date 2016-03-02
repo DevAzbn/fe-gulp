@@ -2,15 +2,18 @@
 $('.fecss-jsviewed').each(function(){
 	
 	var block = $(this);
-	var flt = block.attr('data-jsviewed-filter');
+	var flt = block.attr('data-jsviewed-filter') || 'default';
 	var tpl = block.html();
 	
-	var Viewed = new jsViewed(flt);
+	var Viewed = new jsViewed({
+		filter : flt,
+	});
 	
 	block.on('rebuild', function(event){
 		block.empty();
 		
 		var vwd = Viewed.getAll();
+		console.log(vwd.length);
 		if(vwd != null) {
 			for(var k in vwd) {
 				var item = vwd[k];

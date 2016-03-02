@@ -1,16 +1,21 @@
-var jsCart = function() {
+var jsCart = function(param_obj) {
 	'use strict';
 	
 	var ctrl = this;
 	
+	if(typeof param_obj == 'undefined' || param_obj == null) {
+		param_obj = {
+			filter : 'filter',
+		};
+	}
 	
 	/* ----- параметры для работы корзины ----- */
 	var param = {
 		ls : {
-			cart		:		'__jscart_cart',
-			order		:		'__jscart_order',
-			product		:		'__jscart_product',
-			profile		:		'__jscart_profile',
+			cart		:		'__jscart_cart_' + param_obj.filter,
+			order		:		'__jscart_order_' + param_obj.filter,
+			product		:		'__jscart_product_' + param_obj.filter,
+			profile		:		'__jscart_profile_' + param_obj.filter,
 		},
 	};
 	

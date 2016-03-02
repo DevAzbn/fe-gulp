@@ -1,13 +1,18 @@
-var jsViewed = function(filter) {
+var jsViewed = function(param_obj) {
 	'use strict';
 	
 	var ctrl = this;
 	
+	if(typeof param_obj == 'undefined' || param_obj == null) {
+		param_obj = {
+			filter : 'filter',
+		};
+	}
 	
 	/* ----- параметры для работы корзины ----- */
 	var param = {
 		ls : {
-			viewed		:		'__jsviewed_' + filter,
+			viewed		:		'__jsviewed_' + param_obj.filter,
 		},
 	};
 	
@@ -65,7 +70,7 @@ var jsViewed = function(filter) {
 		
 		if(to_add) {
 			_list.unshift(el);
-			_list.slice(0,25);
+			_list = _list.slice(0,25);
 		}
 		
 		ctrl.ls.obj2s(param.ls.viewed, _list);

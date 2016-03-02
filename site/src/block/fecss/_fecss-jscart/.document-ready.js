@@ -2,8 +2,11 @@
 $('.fecss-jscart').each(function(){
 	
 	var block = $(this);
+	var flt = block.attr('data-jscart-filter') || 'default';
 	
-	var Cart = new jsCart();
+	var Cart = new jsCart({
+		filter : flt,
+	});
 	
 	block.on('rebuild', function(event){
 		block.find('.jscart-item').each(function(index){
