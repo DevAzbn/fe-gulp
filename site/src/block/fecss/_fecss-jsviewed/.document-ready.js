@@ -2,17 +2,27 @@
 $('.fecss-jsviewed').each(function(){
 	
 	var block = $(this);
-	var flt = block.attr('data-jsviewed-filter')
+	var flt = block.attr('data-jsviewed-filter');
+	var tpl = block.html();
 	
 	var Viewed = new jsViewed(flt);
 	
 	block.on('rebuild', function(event){
+		block.empty();
+		
 		var vwd = Viewed.getAll();
 		if(vwd != null) {
 			for(var k in vwd) {
 				var item = vwd[k];
+				
+				var html = tpl;
+				
+				for(var _k in item) {
+					html = html.replace(new RegExp('%' + _k + '%','ig'), item[_k]);
+				}
+				
 				var div = $('<div/>',{
-					html : JSON.stringify(item),
+					html : html,
 				});
 				div.appendTo(block);
 			}
@@ -20,7 +30,8 @@ $('.fecss-jsviewed').each(function(){
 	});
 	block.trigger('rebuild');
 	
-	block.on('create-view', function(event){
+	block.on('create-view', {}, function(event, data){
+		Viewed.add(data);
 		console.log('.fecss-jsviewed[data-jsviewed-filter="' + flt + '"] create-view');
 	});
 	
@@ -35,11 +46,10 @@ $('.fecss-jsviewed').each(function(){
 	});
 	
 	(function(){
-		Viewed.add({
+		block.trigger('create-view', [{
 			id : new Date().getTime(),//1456862349352,//
 			title : 'some test',
-		});
-		block.trigger('create-view');
+		}]);
 	})();
 	
 })
