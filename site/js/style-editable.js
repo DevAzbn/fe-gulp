@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 var style = $('<style/>',{});
 var pre = $('<textarea/>',{});
+var LS = new jsLocalStorage();
 
 pre.css({
 		'display':'none',

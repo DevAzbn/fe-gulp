@@ -18,29 +18,7 @@ var jsViewed = function(param_obj) {
 	
 	
 	/* ----- движок работы с локальным хранилищем ----- */
-	ctrl.ls = {
-		set:function(id,value) {localStorage.setItem(id,value);},
-		get:function(id) {
-			var item = localStorage.getItem(id);
-			if(typeof item !== 'undefined' && item != null) {
-				return localStorage.getItem(id);
-			} else {
-				return null;
-			}
-		},
-		remove:function(id) {localStorage.removeItem(id);},
-		clear:function() {localStorage.clear();},
-		obj2s:function(id,obj2save) {this.set(id,JSON.stringify(obj2save));},
-		s2obj:function(id) {
-			var item = this.get(id);
-			if(typeof item !== 'undefined' && item != null) {
-				return JSON.parse(item);
-			} else {
-				return null;
-			}
-			
-		}
-	};
+	ctrl.ls = new jsLocalStorage();
 	
 	
 	/* ----- добавление элементов в список ----- */
