@@ -49,6 +49,7 @@ gulp.task('dev',
 [
 	'dev:html',
 	'dev:plugin:js',
+	'dev:body.on:js',
 	'dev:document-ready:js',
 	'dev:window-resize:js',
 	'dev:window-scroll:js',
@@ -71,6 +72,7 @@ gulp.task('server', function(){
 	gulp.watch(path.src.html + '/**/*.html', ['dev:html']);
 	
 	gulp.watch(path.block.root + '/**/.plugin.js', ['dev:plugin:js']);
+	gulp.watch(path.block.root + '/**/body.on.js', ['dev:body.on:js']);
 	gulp.watch(path.block.root + '/**/.document-ready.js', ['dev:document-ready:js']);
 	gulp.watch(path.block.root + '/**/.window-resize.js', ['dev:window-resize:js']);
 	gulp.watch(path.block.root + '/**/.window-scroll.js', ['dev:window-scroll:js']);
@@ -78,6 +80,7 @@ gulp.task('server', function(){
 	gulp.watch(path.block.root + '/**/.changeClass.js', ['dev:changeClass:js']);
 	
 	gulp.watch(path.src._ + '/concat.plugin.js', ['dev:js']);
+	gulp.watch(path.src._ + '/concat.body.on.js', ['dev:js']);
 	gulp.watch(path.src._ + '/concat.document-ready.js', ['dev:js']);
 	gulp.watch(path.src._ + '/concat.window-resize.js', ['dev:js']);
 	gulp.watch(path.src._ + '/concat.window-scroll.js', ['dev:js']);
@@ -125,6 +128,16 @@ gulp.task('dev:plugin:js', function(){
 		.pipe(pagebuilder(path.build.root))
 		.pipe(uglify())
 		.pipe(concat('concat.plugin.js'))
+		.pipe(gulp.dest(path.src._))
+	;
+});
+
+gulp.task('dev:body.on:js', function(){
+	return gulp.src(path.block.root + '/**/body.on.js')
+		.pipe(plumber())
+		.pipe(pagebuilder(path.build.root))
+		.pipe(uglify())
+		.pipe(concat('concat.body.on.js'))
 		.pipe(gulp.dest(path.src._))
 	;
 });
