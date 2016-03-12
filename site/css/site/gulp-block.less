@@ -401,6 +401,21 @@
 }
 .can-close {
 	position:relative;
+	/*
+	transform-origin:center center;
+	transition:all @trans-speed ease;
+	transform:scale(1);
+	*/
+	
+	&:not(.active) {
+		/*
+		transform:scale(0);
+		visibility:none;
+		position:fixed;
+		top:-1000%;
+		*/
+		display:none;
+	}
 	
 	.close-btn {
 		position:absolute;
@@ -618,6 +633,9 @@
 		}
 	}
 	*/
+}
+.page-container {
+	.mp0();
 }
 		.full-screen.page-loader {
 			@dark-el-color-bg:rgba(0,0,0,0.75);
