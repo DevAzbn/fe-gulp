@@ -27,4 +27,12 @@ $(document).ready(function() {
 	
 	[snp tpl="src/_/concat.changeClass.js" ]
 	
+	window.onbeforeunload = function(event) {
+		//alert(event.target.URL);
+		$('body').trigger('fecss.window.unload', [event]);
+		return;//return false;
+	}
+	
+	$(document.body).trigger('fecss.init');
+	
 });
