@@ -26,9 +26,12 @@ $(
 			event.stopPropagation();
 			
 			$(document.body).trigger('fecss.keydown', [{
+				alt : event.altKey,
 				ctrl : event.ctrlKey,
 				shift : event.shiftKey,
+				meta : event.metaKey,
 				key : event.which,
+				liter : String.fromCharCode(event.which),
 			}]);
 		});
 	}
