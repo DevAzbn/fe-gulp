@@ -496,6 +496,10 @@
 		z-index:200;
 		opacity:1;
 		#fe.bg(rgba(0, 0, 0, 0.8));
+		
+		&.in-bg {
+			z-index:190;
+		}
 	}
 	
 	.black-container {
@@ -514,6 +518,16 @@
 		z-index:250;
 		#fe.bg(#ffffff);
 		padding:2em;
+		display:none;
+		
+		&.active {
+			display:block;
+			
+			&.in-bg {
+				z-index:240;
+				display:none;
+			}
+		}
 			
 		@media @media-size-xs {
 			& {
