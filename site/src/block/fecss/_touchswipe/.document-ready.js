@@ -1,4 +1,5 @@
 	
+	/*
 	$('.touchswipe').swipe({
 		// http://labs.rampinteractive.co.uk/touchSwipe/demos/
 		
@@ -9,4 +10,5 @@
 		
 		threshold:20
 	});
+	*/
 	
