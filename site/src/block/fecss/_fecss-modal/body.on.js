@@ -55,9 +55,9 @@ $(document.body).on('click.fecss.modal.show', '.fecss-modal-btn', {}, function(e
 			wc.data('fecss-modal-prev', _prev.attr('id'));
 		}
 		
-		if(!modal.hasClass('active')) {
+		//if(!modal.hasClass('active')) {
 			modal.addClass('active').removeClass('in-bg');
-		}
+		//}
 		
 		var bc = modal.find('.black-container');
 		bc.css({top : $(document).scrollTop() + 50 + 'px',});
@@ -91,6 +91,7 @@ $(document.body).on('click.fecss.modal.hide', '.fecss-modal .white-container .hi
 				if(!_prev_modal.hasClass('in-bg')) {
 					
 				} else {
+					modal.removeClass('active').removeClass('in-bg');
 					_prev_modal.removeClass('in-bg');
 				}
 			} else {
