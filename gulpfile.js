@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),					// отлов ошибок
 	pagebuilder = require('gulp-pagebuilder');			// умный инклуд html с поддержкой вложенности и передачей параметров
 
-var root = 'site',//'site',//'rybka',
+var root = 'pf5',//'site',//'rybka',
 	src = root + '/' + 'src';
 
 var path = {
