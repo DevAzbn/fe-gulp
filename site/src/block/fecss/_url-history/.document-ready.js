@@ -9,7 +9,7 @@
 		if(typeof target != 'undefined' && target != 'undefined') {
 			//href = target;
 		} else {
-			target = 'body';
+			target = 'title:title, body:body';
 		}
 		
 		var addToHistory = true;
