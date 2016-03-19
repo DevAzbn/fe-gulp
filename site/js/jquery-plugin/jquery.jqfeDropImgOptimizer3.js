@@ -54,12 +54,12 @@ ajax-загрузки файлов на сервер
 								w = Math.round(h * real_prop);
 								}
 						
-						} else {
-							
-							w = real_w;
-							h = real_h;
-							
-							}
+					} else {
+						
+						w = real_w;
+						h = real_h;
+						
+					}
 					
 					var canvas = document.createElement('canvas');
 					canvas.setAttribute('width', w);
@@ -68,7 +68,10 @@ ajax-загрузки файлов на сервер
 					ctx.drawImage(img, 0, 0, w, h);
 					
 					el.attr('data-loaded-images', (parseInt(el.attr('data-loaded-images')) + 1 || 1));
-					callback(canvas.toDataURL('image/png'));
+					callback({
+						dataURL : canvas.toDataURL('image/png'),
+						file : file,
+					});
 					
 				} catch (err) {
 					console.error(err.code);
@@ -137,7 +140,7 @@ ajax-загрузки файлов на сервер
 					
 					selectFilesAndModify(el, this.files, options, event);
 					uploadfile.unbind('change.' + defaults.plugin.name);
-					//uploadfile.remove();
+					uploadfile.remove();
 					
 				});
 			

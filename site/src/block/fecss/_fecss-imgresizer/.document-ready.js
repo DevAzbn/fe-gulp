@@ -21,8 +21,8 @@ $(document.body).on('click.fecss.imgresizer', '.fecss-imgresizer', {}, function(
 		max_width : max_w,
 		max_height : max_h,
 		'multiple' : 'multiple',
-		callback:function(dataURL){
-			$(document.body).append('<img src="' + dataURL + '" />');
+		callback:function(result){ // {result:, file:}
+			$(document.body).append('<img src="' + result.dataURL + '" title="' + result.file.name + '" />');
 		}
 	})
 
