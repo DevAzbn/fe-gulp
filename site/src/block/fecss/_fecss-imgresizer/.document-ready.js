@@ -20,6 +20,7 @@ $(document.body).on('click.fecss.imgresizer', '.fecss-imgresizer', {}, function(
 	btn.jqfeDropImgOptimizer3({
 		max_width : max_w,
 		max_height : max_h,
+		'multiple' : 'multiple',
 		callback:function(dataURL){
 			$(document.body).append('<img src="' + dataURL + '" />');
 		}

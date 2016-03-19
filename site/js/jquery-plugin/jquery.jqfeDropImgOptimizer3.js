@@ -124,7 +124,7 @@ ajax-загрузки файлов на сервер
 			var uploadfile = $('<input/>', {
 				name : options.name,
 				type : 'file',
-				multiple : options.multiple || '',//'multiple'
+				//multiple : options.multiple,
 				css :{
 					'display':'none'
 				},
@@ -137,9 +137,13 @@ ajax-загрузки файлов на сервер
 					
 					selectFilesAndModify(el, this.files, options, event);
 					uploadfile.unbind('change.' + defaults.plugin.name);
-					uploadfile.remove();
+					//uploadfile.remove();
 					
 				});
+			
+			if(options.multiple != '' && options.multiple) {
+				uploadfile.attr('multiple', 'multiple');
+			}
 			
 			uploadfile.trigger('click.' + defaults.plugin.name);
 				
