@@ -4,21 +4,21 @@ ajax-загрузки файлов на сервер
 */ 
 (function($){
 	
-	var defaults={
+	var defaults = {
 		plugin:{
-			name:'jqfeDropImgOptimizer3',
-			version:'0.3',
-			mod_date:'18/03/2016 23:47',
+			name : 'jqfeDropImgOptimizer3',
+			version : '0.3',
+			mod_date : '18/03/2016 23:47',
 		},
 		strings:{
-			error_no_filereader:'Не поддерживается браузером',
+			error_no_filereader : 'Не поддерживается браузером',
 		},
 		//action:'/',
 		//name:'filename',
-		callback:function(str){alert(str);}
+		callback : function(str){alert(str);}
 	};
 	
-	var modifyAndUpload=function(el, file, options, event) {
+	var modifyAndUpload = function(el, file, options, event) {
 		
 		var reader = new FileReader();
 		
@@ -38,8 +38,8 @@ ajax-загрузки файлов на сервер
 					
 					var real_w = img.width;
 					var real_h = img.height;
-					var w=1;
-					var h=1;
+					var w = 1;
+					var h = 1;
 					
 					if(real_w > options.max_width || real_h > options.max_height) {
 						
@@ -78,7 +78,7 @@ ajax-загрузки файлов на сервер
 		};
 		
 		reader.onerror = function(event) {
-			console.error('Error: '+event.target.error.code);
+			console.error('Error: ' + event.target.error.code);
 		};
 		
 		reader.readAsDataURL(file);
@@ -107,7 +107,7 @@ ajax-загрузки файлов на сервер
 		
 		init : function(params){
 			
-			var options = $.extend({},defaults,params);
+			var options = $.extend({}, defaults, params);
 			//this.data(defaults.plugin.name, options);
 			
 			var el = $(this);
@@ -124,11 +124,11 @@ ajax-загрузки файлов на сервер
 			var uploadfile = $('<input/>', {
 				name : options.name,
 				type : 'file',
-				multiple : 'multiple',
+				multiple : options.multiple || '',//'multiple'
 				css :{
 					'display':'none'
 				},
-				id : defaults.plugin.name+'-uploadfile',
+				//id : defaults.plugin.name+'-uploadfile',
 			})
 				.appendTo($('body'))
 				
