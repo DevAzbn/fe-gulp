@@ -30,3 +30,7 @@ $(document.body).on('fecss.ajax.success',		null, {}, function(event) {
 $(document.body).on('fecss.keydown',		null, {}, function(event, _event) {
 	console.log('body trigger:fecss.keydown: ' + JSON.stringify(_event));
 });
+
+$(document.body).on('DOMSubtreeModified',		null, {}, function(event, _event) {
+	console.log('body trigger:DOMSubtreeModified: ' + JSON.stringify(_event));
+});
