@@ -1219,6 +1219,11 @@
 		transition-delay:@period * 4;
 		background-position:center center;
 		background-size:cover;
+		
+		&.on-top {
+			opacity:1;
+			z-index:0;
+		}
 	}
 	
 	.sq {
@@ -1286,11 +1291,6 @@
 	}
 	
 	&.active {
-		
-		.img-item.on-top {
-			opacity:1;
-			z-index:0;
-		}
 		
 		.sq {
 			

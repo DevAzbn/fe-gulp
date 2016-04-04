@@ -15,4 +15,5 @@ $(".scroll-container").each(function(t){var r,o=$(this),a=$(o.attr("data-target"
 
 $(document.body).on("click.fecss.url-history",".url-history",{},function(t){t.preventDefault();var e=$(this),r=e.attr("href"),o=e.attr("data-target");"undefined"!=typeof o&&"undefined"!=o||(o="title:title, body:body");var d=!0;$(document.body).trigger("fecss.url-history.get",[r,o,d])});
 $(".boobs").each(function(o){$(this)});
-$(document.body).on("click.fecss.rolling-image-btn",".rolling-image-btn",{},function(i){i.preventDefault();var a=$(this),e=a.attr("data-img-id");$(".rolling-image").removeClass("active").addClass("active").find(".img-item").removeClass("on-top").filter(e).addClass("on-top")});
+
+$(document.body).on("click.fecss.rolling-image-btn",".rolling-image-btn",{},function(i){i.preventDefault();var e=$(this),a=e.attr("data-img-id"),t=$(".rolling-image");t.find(".img-item").removeClass("on-top"),t.removeClass("active"),t.find(".img-item").filter(a).addClass("on-top"),t.addClass("active"),$(".rolling-image-btn").prop("disabled","disabled"),setTimeout(function(){t.removeClass("active"),$(".rolling-image-btn").prop("disabled",!1)},6e3)});
