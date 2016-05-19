@@ -639,6 +639,12 @@
 	}
 	
 }
+.fecss-jssearch {
+	display:inline-block;
+	outline:1px #ffff00 solid;
+	outline-offset:2px;
+	#fe.bg(#ffff00);
+}
 .fecss-modal {
 	position:absolute;
 	left:0;
@@ -1131,64 +1137,6 @@
 	}
 	*/
 }
-body {
-	
-	&[class*='theme-'], *[class*='theme-'] {
-		
-		&.theme-dev {
-			
-			@dbg-dline-w:2px;
-			@dbg-sline-w:1px;
-			@dbg-hover-sline-w:5px;
-			
-			outline: @dbg-dline-w dotted red;
-			#fe.bi('chess-bg.png');
-			
-			* {
-				outline:@dbg-dline-w dotted green;
-				
-				&:hover {
-					outline:@dbg-hover-sline-w solid black;
-				}
-				
-				& * {
-					outline:@dbg-dline-w dotted orange;
-					
-					& * {
-						outline:@dbg-dline-w dotted blue;
-						
-						& * {
-							outline:@dbg-sline-w solid red;
-							
-							& * {
-								outline:@dbg-sline-w solid green;
-								
-								& * {
-									outline:@dbg-sline-w solid orange;
-									
-									& * {
-										outline:@dbg-sline-w solid blue;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			
-		}
-		&.theme-b0w {
-			#fe.color(#000000);
-			#fe.bg(#ffffff);
-		}
-		&.theme-w0b {
-			#fe.color(#ffffff);
-			#fe.bg(#000000);
-		}
-		
-	}
-	
-}
 /*@keyframes vert-anim {from {visibility:0;opacity:0;}to{visibility:initial;opacity:1;}}*/
 
 .fun.boobs {
@@ -1387,4 +1335,62 @@ body {
 		}
 		
 	}
+}
+body {
+	
+	&[class*='theme-'], *[class*='theme-'] {
+		
+		&.theme-dev {
+			
+			@dbg-dline-w:2px;
+			@dbg-sline-w:1px;
+			@dbg-hover-sline-w:5px;
+			
+			outline: @dbg-dline-w dotted red;
+			#fe.bi('chess-bg.png');
+			
+			* {
+				outline:@dbg-dline-w dotted green;
+				
+				&:hover {
+					outline:@dbg-hover-sline-w solid black;
+				}
+				
+				& * {
+					outline:@dbg-dline-w dotted orange;
+					
+					& * {
+						outline:@dbg-dline-w dotted blue;
+						
+						& * {
+							outline:@dbg-sline-w solid red;
+							
+							& * {
+								outline:@dbg-sline-w solid green;
+								
+								& * {
+									outline:@dbg-sline-w solid orange;
+									
+									& * {
+										outline:@dbg-sline-w solid blue;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+		&.theme-b0w {
+			#fe.color(#000000);
+			#fe.bg(#ffffff);
+		}
+		&.theme-w0b {
+			#fe.color(#ffffff);
+			#fe.bg(#000000);
+		}
+		
+	}
+	
 }

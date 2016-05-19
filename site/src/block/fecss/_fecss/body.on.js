@@ -20,5 +20,5 @@ $(document.body).on('fecss.keydown',		null, {}, function(event, _event) {
 });
 
 $(document.body).on('DOMSubtreeModified',		null, {}, function(event, _event) {
-	console.log('body trigger:DOMSubtreeModified: ' + JSON.stringify(_event));
+	//console.log('body trigger:DOMSubtreeModified: ' + JSON.stringify(_event));
 });
