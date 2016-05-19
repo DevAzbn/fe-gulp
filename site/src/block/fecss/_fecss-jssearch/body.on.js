@@ -15,6 +15,7 @@ $(document.body).on('fecss.jssearch',		null, {}, function(event, str, cb) {
 		var msg = '';
 		
 		body
+			.attr('data-fecss-jssearch', str)
 			.find('*')
 			.contents()
 			.each(function(index) {
