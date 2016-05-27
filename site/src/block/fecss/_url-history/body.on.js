@@ -29,6 +29,8 @@
 	
 	window.addEventListener('popstate', function(event) {
 		//alert(JSON.stringify(event.state));
-		$(document.body).trigger('fecss.url-history.get', [window.location.pathname, event.state.target, false]);
+		if(event.state && event.state.target) {
+			$(document.body).trigger('fecss.url-history.get', [window.location.pathname, event.state.target, false]);
+		}
 	}, false);
 	
