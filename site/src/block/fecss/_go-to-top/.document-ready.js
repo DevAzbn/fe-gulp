@@ -3,7 +3,7 @@
 start .got-to-top document-ready
 */
 
-$(document.ready).on('click.fecss.go-to-top', '.go-to-top', function(event){
+$(document.body).on('click.fecss.go-to-top', '.go-to-top', function(event){
 	event.preventDefault();
 	
 	$('html, body').animate({

@@ -7,7 +7,7 @@ window.onerror = function(error, url, lineNumber, column, errorObj) {
 
 [snp tpl="src/_/concat.plugin.js" ]
 
-$(document).ready(function() {
+$(function() {
 	
 	[snp tpl="src/_/concat.body.on.js" ]
 	

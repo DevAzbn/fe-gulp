@@ -4,9 +4,10 @@ window.onerror
 [snp tpl="src/_/concat.plugin.js" ]
 	.scroll-container
 	.tooltip
+	screenJS
 
 
-$(document).ready
+$(document).ready // $(function(){})
 	
 	
 	[snp tpl="src/_/concat.body.on.js" ]
@@ -29,7 +30,7 @@ $(document).ready
 	[snp tpl="src/_/concat.document-ready.js" ]
 		$(document.body).bind('keydown')
 		$(document.body).on('click.fecss.fecss-collapse.collapser')
-		$(document.ready).on('click.fecss.go-to-top')
+		$(document.body).on('click.fecss.go-to-top')
 		$(document.body).on('click.fecss.rolling-image-btn')
 		$(window).load() //$('.page-loader').removeClass('active');
 		$(document.body).on('click.fecss.imgresizer')

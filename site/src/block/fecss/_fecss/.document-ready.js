@@ -23,7 +23,7 @@ $(
 
 $(
 	function() {
-		$(document.body).bind('keydown', function(event){
+		$(document.body).on('keydown', function(event){
 			event.stopPropagation();
 			
 			$(document.body).trigger('fecss.keydown', [{
