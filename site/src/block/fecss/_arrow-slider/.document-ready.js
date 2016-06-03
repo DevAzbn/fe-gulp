@@ -10,16 +10,38 @@
 		//var counter = block.find('.info-block .counter');
 		//var position = counter.find('.position');
 		
+		block.on('change-size', function(event){
+			event.preventDefault();
+			
+			var block_h;
+			
+			if(screenJS.isXS()) {
+				block_h = parseInt(block.attr('data-block-height-xs') || 210);
+			} else if(screenJS.isSM()) {
+				block_h = parseInt(block.attr('data-block-height-sm') || 360);
+			} else if(screenJS.isMD()) {
+				block_h = parseInt(block.attr('data-block-height-md') || 480);
+			} else if(screenJS.isLG()) {
+				block_h = parseInt(block.attr('data-block-height-lg') || 640);
+			}
+			/*
+			else {
+				block_h = parseInt(block.attr('data-block-height-default') || 480);
+			}
+			*/
+			
+			block.css({
+				height : block_h + 'px',
+			});
+			
+		});
+		
 		block.on('init', function(event){
 			event.preventDefault();
 			
 			console.log('.arrow-slider init');
 			
-			var block_h = block.attr('data-block-height') || 480;
-			
-			block.css({
-				height : block_h + 'px',
-			});
+			//block.trigger('resize');
 			
 			point_line.empty();
 			
@@ -30,15 +52,21 @@
 					html : '<span class="point" ></span>',
 					href : '#image-' + index,
 				})
-				.on('click.fecss.arrow-slider.point',function(event){
-					console.log('click.fecss.arrow-slider.point');
-					var i = $(this).index();
-					point_line.find('.item').removeClass('active');
-					imgs.fadeOut('fast').removeClass('active');
-					$(this).addClass('active');
-					imgs.eq(i).fadeIn('fast').addClass('active');
-				})
-				.appendTo(point_line);
+					.attr('data-item-index', index)
+					.on('click.fecss.arrow-slider.point',function(event){
+						event.preventDefault();
+						
+						console.log('click.fecss.arrow-slider.point');
+						
+						var i = $(this).index();
+						
+						point_line.find('.item').removeClass('active');
+						imgs.fadeOut('fast').removeClass('active');
+						$(this).addClass('active');
+						imgs.eq(i).fadeIn('fast').addClass('active');
+						
+					})
+					.appendTo(point_line);
 			});
 			
 			if(block.hasClass('with-timer')) {
@@ -57,9 +85,12 @@
 				point_line.find('.item').eq(0).trigger('click');
 			}
 			
-		}).trigger('init');
+		})
+			.trigger('init');
 		
-		block.on('click.fecss.arrow-slider.right', '.btn-arrow.right', function(event){
+		block.on('click.fecss.arrow-slider.btn-arrow', '.btn-arrow.right', function(event){
+			event.preventDefault();
+			
 			var p = point_line.find('.item');
 			var i = p.filter('.active').eq(0).index();
 			var nxt = p.eq(i).next('.item');
@@ -70,7 +101,9 @@
 			}
 		});
 		
-		block.on('click.fecss.arrow-slider.left', '.btn-arrow.left', function(event){
+		block.on('click.fecss.arrow-slider.btn-arrow', '.btn-arrow.left', function(event){
+			event.preventDefault();
+			
 			var p = point_line.find('.item');
 			var i = p.filter('.active').eq(0).index();
 			var nxt = p.eq(i).prev('.item');
