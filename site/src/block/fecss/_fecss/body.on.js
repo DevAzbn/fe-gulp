@@ -30,3 +30,11 @@ $(document.body).on('fecss.keydown',		null, {}, function(event, _event) {
 $(document.body).on('DOMSubtreeModified',		null, {}, function(event, _event) {
 	//console.log('body trigger:DOMSubtreeModified: ' + JSON.stringify(_event));
 });
+
+$(document.body).on("wheel mousewheel DOMMouseScroll MozMousePixelScroll", function(event) {
+	event.preventDefault();
+	
+	var diff = (-event.originalEvent.deltaY) || event.originalEvent.detail || event.originalEvent.wheelDelta;
+	console.log('body trigger:wheel: ' + diff);
+	
+});
