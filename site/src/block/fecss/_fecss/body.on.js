@@ -32,7 +32,7 @@ $(document.body).on('DOMSubtreeModified',		null, {}, function(event, _event) {
 });
 
 $(document.body).on("wheel mousewheel DOMMouseScroll MozMousePixelScroll", function(event) {
-	event.preventDefault();
+	//event.preventDefault();
 	
 	var diff = (-event.originalEvent.deltaY) || event.originalEvent.detail || event.originalEvent.wheelDelta;
 	console.log('body trigger:wheel: ' + diff);
