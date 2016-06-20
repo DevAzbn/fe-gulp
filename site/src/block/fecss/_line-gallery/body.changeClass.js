@@ -19,7 +19,7 @@
 		}
 		
 		var imgs = block.find('.img-block .item');//.hide();
-		for(var i = (c); i < imgs.size(); i++) {
+		for(var i = (c); i < imgs.length; i++) {
 			imgs.eq(i).hide();
 		}
 		for(var i = 0; i < c; i++) {

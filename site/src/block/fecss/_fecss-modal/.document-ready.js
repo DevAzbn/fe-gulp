@@ -10,10 +10,10 @@ $(document.body).on('click.fecss.modal.show', '.fecss-modal-btn', {}, function(e
 	var wc = $(document.body).find('.fecss-modal ' + href + '.white-container');
 	var modal = wc.closest('.fecss-modal');
 	
-	if(wc.size()) {
+	if(wc.length) {
 		
 		var _prev = $(document.body).find('.fecss-modal .white-container.active:not(.in-bg)').eq(0);
-		if(_prev.size()) {
+		if(_prev.length) {
 			_prev.addClass('in-bg');
 			_prev.closest('.fecss-modal').addClass('in-bg');
 			wc.data('fecss-modal-prev', _prev.attr('id'));
@@ -42,12 +42,12 @@ $(document.body).on('click.fecss.modal.hide', '.fecss-modal .white-container .hi
 	var wc = btn.closest('.white-container');
 	var modal = btn.closest('.fecss-modal');
 	
-	if(wc.size()) {
+	if(wc.length) {
 		
 		wc.removeClass('active').removeClass('in-bg');
 		
 		var _prev = $('#' + wc.data('fecss-modal-prev'));
-		if(_prev.size()) {
+		if(_prev.length) {
 			
 			var _prev_modal = _prev.closest('.fecss-modal');
 			

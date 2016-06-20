@@ -79,7 +79,7 @@
 				}, 3000))
 			}
 			
-			if(point_line.find('.item.active').size()) {
+			if(point_line.find('.item.active').length) {
 				
 			} else {
 				point_line.find('.item').eq(0).trigger('click');
@@ -94,7 +94,7 @@
 			var p = point_line.find('.item');
 			var i = p.filter('.active').eq(0).index();
 			var nxt = p.eq(i).next('.item');
-			if(nxt.size()) {
+			if(nxt.length) {
 				nxt.trigger('click');
 			} else {
 				p.eq(0).trigger('click');
@@ -107,7 +107,7 @@
 			var p = point_line.find('.item');
 			var i = p.filter('.active').eq(0).index();
 			var nxt = p.eq(i).prev('.item');
-			if(nxt.size()) {
+			if(nxt.length) {
 				nxt.trigger('click');
 			} else {
 				p.eq(-1).trigger('click');

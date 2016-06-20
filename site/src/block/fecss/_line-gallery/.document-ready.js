@@ -8,7 +8,7 @@
 		block.on('click.line-gallery.right', '.btn-arrow.right', function(event){
 			var imgs = block.find('.img-block .item');
 			var vis = imgs.filter(':visible');
-			if(vis.size() > 1) {
+			if(vis.length > 1) {
 				vis.eq(0).hide().insertAfter(imgs.eq(-1));
 				vis.eq(-1).next('.item').fadeIn('fast');
 			} else {
@@ -19,7 +19,7 @@
 		block.on('click.line-gallery.left', '.btn-arrow.left', function(event){
 			var imgs = block.find('.img-block .item');
 			var vis = imgs.filter(':visible');
-			if(vis.size() > 1) {
+			if(vis.length > 1) {
 				vis.eq(-1).hide();
 				imgs.eq(-1).insertBefore(vis.eq(0)).fadeIn('fast');
 			} else {

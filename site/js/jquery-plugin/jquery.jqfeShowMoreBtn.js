@@ -68,7 +68,7 @@ jquery-плагин
 				
 				var to_show = item_list.filter('.' + defaults.class.hidden);
 				
-				if(to_show.size() > options.count) {
+				if(to_show.length > options.count) {
 					
 				} else {
 					el.animate({

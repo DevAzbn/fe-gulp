@@ -1,4 +1,4 @@
-$(window).load(function(event){
+$(window).on('load', function(event){
 	$('.page-loader').removeClass('active');
 });
 
