@@ -35,6 +35,6 @@ $(document.body).on("wheel mousewheel DOMMouseScroll MozMousePixelScroll", funct
 	//event.preventDefault();
 	
 	var diff = (-event.originalEvent.deltaY) || event.originalEvent.detail || event.originalEvent.wheelDelta;
-	console.log('body trigger:wheel: ' + diff);
+	//console.log('body trigger:wheel: ' + diff);
 	
 });

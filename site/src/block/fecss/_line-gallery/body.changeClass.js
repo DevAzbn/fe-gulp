@@ -2,7 +2,7 @@
 	$('.line-gallery').each(function(index){
 		
 		var block = $(this);
-		var body = $('body').eq(0);
+		var body = $(document.body);
 		var c = 3;
 		
 		if(body.hasClass('window-width-xs')) {

@@ -165,3 +165,45 @@ screenJS.onResize({type : 'xs', orientation : 'portrait'}, function(new_screen){
 
 
 */
+
+
+
+
+
+
+/*
+Создание события на смену класса у элемента
+*/
+
+(function($){
+	
+	var originalAddClassMethod = jQuery.fn.addClass;
+	var originalRemoveClassMethod = jQuery.fn.removeClass;
+	var originalToggleClassMethod = jQuery.fn.toggleClass;
+	
+	$.fn.addClass = function(){
+		var result = originalAddClassMethod.apply(this, arguments);
+		$(this).trigger('changeClass', ['add']);
+		//console.log('changeClass add');
+		return result;
+	}
+	
+	$.fn.removeClass = function(){
+		var result = originalRemoveClassMethod.apply(this, arguments);
+		$(this).trigger('changeClass', ['remove']);
+		//console.log('changeClass remove');
+		return result;
+	}
+	
+	$.fn.toggleClass = function(){
+		var result = originalToggleClassMethod.apply(this, arguments);
+		$(this).trigger('changeClass', ['toggle']);
+		//console.log('changeClass toggle');
+		return result;
+	}
+	
+})(jQuery);
+
+/*
+/Создание события на смену класса у элемента
+*/
