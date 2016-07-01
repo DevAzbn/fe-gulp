@@ -68,7 +68,7 @@ jquery-плагин
 				
 				var to_show = item_list.filter('.' + defaults.class.hidden);
 				
-				if(to_show.length > options.count) {
+				if(to_show.size() > options.count) {
 					
 				} else {
 					el.animate({
@@ -82,7 +82,7 @@ jquery-плагин
 					});
 				}
 				
-				for(var i = 0; i < options.count; i++) {
+				var __anim_el = function(i) {
 					
 					var item = to_show.eq(i);
 					
@@ -96,6 +96,12 @@ jquery-плагин
 							;
 						})
 						;
+					
+				}
+				
+				for(var i = 0; i < options.count; i++) {
+					
+					__anim_el(i);
 					
 				}
 				
