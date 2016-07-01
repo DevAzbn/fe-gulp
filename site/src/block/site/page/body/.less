@@ -2,6 +2,7 @@ body {
 	
 	&[class*='theme-'], *[class*='theme-'] {
 		
+		
 		&.theme-dev {
 			
 			@dbg-dline-w:2px;
@@ -44,10 +45,12 @@ body {
 			}
 			
 		}
+		
 		&.theme-b0w {
 			#fe.color(#000000);
 			#fe.bg(#ffffff);
 		}
+		
 		&.theme-w0b {
 			#fe.color(#ffffff);
 			#fe.bg(#000000);
@@ -55,13 +58,36 @@ body {
 		
 	}
 	
+	
 	&, &[data-state="default"] {
 		
 	}
 	
+	
+	
 	&, &[data-fecss-modal="no-modal"] {
 		
 	}
+	
+	
+	
+	&, &[data-context="container"], & *[data-context="container"] {
+		
+	}
+	&[data-context="design"], & *[data-context="design"] {
+		
+	}
+	&[data-context="title"], & *[data-context="title"] {
+		
+	}
+	&[data-context="text"], & *[data-context="text"] {
+		
+	}
+	&[data-context="image"], & *[data-context="image"] {
+		
+	}
+	
+	
 	
 	&.is-mainpage {
 		

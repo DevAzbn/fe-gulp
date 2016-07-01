@@ -4,6 +4,9 @@
 
 
 <title>FE CSS</title>
+
+<meta name="referrer" content="never">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -18,7 +21,20 @@
 <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
 <link type="image/x-icon" href="/favicon.ico" rel="icon" />
 
-<link href="/css/site.css?update=201511050936" rel="stylesheet">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16" />
+-->
+
+<meta property="og:image" content="https://azbn.ru/favicon.ico" />
+
+<link href="/css/site.css?update=201607010900" rel="stylesheet">
 
 <!--
 <link rel="stylesheet/less" type="text/css" href="/css/site.less?update=201509210901" />
@@ -43,7 +59,7 @@
 
 
 </head>
-<body class="fecss full-height is-mainpage touchswipe theme-b0w " data-fecss-jssearch="Lorem" data-fecss-modal="no-modal" >
+<body class="fecss full-height is-mainpage touchswipe theme-b0w " data-fecss-jssearch="Lorem" data-fecss-modal="no-modal" data-context="container" >
 	
 	<div class="full-screen active semi-dark  page-loader " >
 	<div class="at-center" >
@@ -55,7 +71,7 @@
 	</div>
 </div>
 	
-	<div class="page-container" >
+	<div class="page-container" data-context="container" >
 		
 		<div class="fluid-block " >
 				
@@ -94,6 +110,30 @@
 	</div>
 	
 		</div>
+		
+		
+		<div class="fluid-block " >
+			<div class="adaptive-block grid grid-12 " >
+				<div class="grid-row" >
+					
+					<div class="clmn-12 clmn-xs-12 clmn-sm-0 clmn-md-6 clmn-lg-4 " >
+						clmn-xs-12 clmn-sm-0 clmn-md-6 clmn-lg-4
+					</div>
+					
+					<div class="clmn-12 clmn-xs-0 clmn-sm-9 clmn-md-6 clmn-lg-4 " >
+						clmn-xs-0 clmn-sm-9 clmn-md-6 clmn-lg-4
+					</div>
+					
+					<div class="clmn-12 clmn-xs-12 clmn-sm-3 clmn-md-0 clmn-lg-4 " >
+						clmn-xs-12 clmn-sm-3 clmn-md-0 clmn-lg-4
+					</div>
+					
+					<div class="clear" ></div>
+				
+				</div>
+			</div>
+		</div>
+		
 		
 		<div class="fluid-block " >
 			<div class="raphael-cont" id="raphael-cont" ></div>
